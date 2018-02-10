@@ -31,7 +31,5 @@ r = requests.post(url, data={'device':(device),'A0':(A0),'A1':(A1),'A2':(A2),'A3
 print(r.status_code, r.reason)
 sys.exit()
 
-
-
-
 #"http://70.35.207.145/ubicacion_vallas_pruebas/wp-json/int_sens/accesos"
+#pruebas github
