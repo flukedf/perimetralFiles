@@ -1,0 +1,3 @@
+10 * * * * "reset-mcu"
+00 12 * * * "reboot"
+00 00 * * * "reboot"

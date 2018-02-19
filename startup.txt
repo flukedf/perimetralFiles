@@ -1,0 +1,21 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+# wifi-live-or-reset
+
+# Changing bootloader name in LUA executable
+
+FILE=/usr/bin/merge-sketch-with-bootloader.lua
+BOARD=`cat /proc/cpuinfo | grep machine | awk {'print $4'}`
+
+case $BOARD in
+    'One'|'Lei'|'Chiwawa'|'Yun-Mini')
+        sed -i -e "s/Caterina-Yun.hex/Caterina-$BOARD.hex/g" $FILE
+        ;;
+	*)
+reset-mcu
+		exit 0
+		;;
+esac
+
+exit 0
