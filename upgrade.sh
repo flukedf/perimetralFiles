@@ -7,11 +7,11 @@
 echo '----------------------Introduzca Version de Firmware:-----------------------------'
 #leer el dato del teclado y guardarlo en la variable de usuario var1
 echo "----------------------Versiones Disponibles----------------------"
-echo ///////////////////////////
+echo ------------------------------------
 echo "screen.hex"
 echo "PerimetralScreen.hex"
 echo "V230218.hex"
-echo /////////////////////////////
+echo ------------------------------------
 echo
 echo
 echo
