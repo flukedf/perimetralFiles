@@ -13,15 +13,17 @@ echo "V230218.hex"
 read var1
 #Mostrar el valor de la variable de usuario
 echo $var1
+echo $var1
+echo $var1
+echo $var1
 
 
 
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
+chmod 777 "$var1".hex
+merge-sketch-with-bootloader.lua /root/"$var1".hex
 
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var".hex
-chmod 777 "$var".hex
-merge-sketch-with-bootloader.lua /root/"$var".hex
-
-run-avrdude /root/"$var".hex
+run-avrdude /root/"$var1".hex
 
 echo
 #Avisar al usuario que se ha terminado de ejecutar el script 
