@@ -4,12 +4,12 @@
 #Author: Gonzalo Silverio  -> gonzasilve@gmail.com
 #Archivo: script2.sh
 #pedir el dato al usuario
-echo 'Introduzca Version de Firmware:\n'
+echo 'Introduzca Version de Firmware:'
 #leer el dato del teclado y guardarlo en la variable de usuario var1
-echo "Versiones Disponibles\n"
-echo "screen.hex\n"
-echo "PerimetralScreen.hex\n"
-echo "V230218.hex\n"
+echo "Versiones Disponibles"
+echo "screen.hex"
+echo "PerimetralScreen.hex"
+echo "V230218.hex"
 read var1
 #Mostrar el valor de la variable de usuario
 echo $var1
