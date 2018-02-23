@@ -17,11 +17,11 @@ echo $var1
 
 
 
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var"
-chmod 777 "$var"
-merge-sketch-with-bootloader.lua /root/"$var"
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var"*
+chmod 777 "$var"*
+merge-sketch-with-bootloader.lua /root/"$var"*
 
-run-avrdude /root/"$var"
+run-avrdude /root/"$var"*
 
 echo
 #Avisar al usuario que se ha terminado de ejecutar el script 
