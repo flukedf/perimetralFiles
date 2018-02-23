@@ -11,7 +11,7 @@ echo ///////////////////////////
 echo "screen.hex"
 echo "PerimetralScreen.hex"
 echo "V230218.hex"
-echo/////////////////////////////
+echo /////////////////////////////
 echo
 echo
 echo
