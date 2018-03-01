@@ -11,6 +11,7 @@ echo ------------------------------------
 echo "screen.hex"
 echo "PerimetralScreen.hex"
 echo "V230218.hex"
+echo "V180301.hex"
 echo ------------------------------------
 echo
 echo
@@ -39,3 +40,12 @@ echo
 echo
 echo ---------Reiniciando el Sistema-------------
 reboot
+
+
+Introducción al análisis de circuitos Robert L. Boylestad 12Ed
+
+Calculo Diferencial e Integral Shaum 
+
+Electrónica Teoría de Circuitos y Dispositivos Electrónicos 10Ed
+
+Cálculo diferencial e integral I Problemas resueltos
