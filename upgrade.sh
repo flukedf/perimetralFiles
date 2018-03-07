@@ -27,6 +27,11 @@ echo
 echo
 echo
 
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
+chmod 777 checkBridge.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge
+chmod 777 checkBridge
+cp checkBridge /etc/init.d/checkBridge
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
 chmod 777 "$var1".hex

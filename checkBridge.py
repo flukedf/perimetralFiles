@@ -21,7 +21,7 @@ try:
 	status = int(status)
 	print status
 
-	if status == 50:
+	if status == 1:
 		print ("Sistema iniciado correctamente")
 	else:	
 		print("El sistema se reiniciara nuevamente")
@@ -29,3 +29,4 @@ except:
     print "Bridge did't start"
     sleep(30)
     os.system('reboot')
+sys.exit("tatatata")
