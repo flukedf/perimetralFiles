@@ -32,6 +32,7 @@ chmod 777 checkBridge.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge
 chmod 777 checkBridge
 cp checkBridge /etc/init.d/checkBridge
+/etc/init.d/checkBridge enable
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
 chmod 777 "$var1".hex
