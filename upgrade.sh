@@ -41,7 +41,6 @@ python setup.py install
 cd ..
 rm -fr requests-2.9.1
 
-
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
 chmod 777 checkBridge.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge
