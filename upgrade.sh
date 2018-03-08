@@ -35,9 +35,11 @@ cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/if_mail.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/status.sh
 chmod 777 postData.py
 chmod 777 if_mail.py
-
+chmod 777 status.sh
+cp status.sh /usr/bin/status
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
 chmod 777 "$var1".hex
