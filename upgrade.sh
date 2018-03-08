@@ -27,6 +27,11 @@ echo
 echo
 echo
 
+opkg update
+opkg install distribute
+opkg install python-openssl
+opkg install python-bzip2
+
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
 chmod 777 checkBridge.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge
@@ -43,6 +48,9 @@ chmod 777 status.sh
 cp status.sh /usr/bin/status
 
 chmod 777 publicIP.py
+#wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1
+
+
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
 chmod 777 "$var1".hex
