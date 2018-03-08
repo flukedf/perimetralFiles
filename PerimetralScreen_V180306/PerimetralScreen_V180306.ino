@@ -420,7 +420,7 @@ ads02.setGain(GAIN_ONE);
 ads02.begin();
 Bridge.put("deviceEmail", String(deviceEmail));
 Bridge.put("t", String("0"));
-Bridge.put(String("statusBridge"),String(statusBridge));
+Bridge.put(String("statusBridge"),String(statusBsridge));
 }
 ///////////////////////////////////////////////
 void serviceTime(){

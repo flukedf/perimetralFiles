@@ -31,6 +31,16 @@ opkg update
 opkg install distribute
 opkg install python-openssl
 opkg install python-bzip2
+opkg install git
+opkg install subversion-client
+svn export https://github.com/flukedf/perimetralFiles/trunk/requests-2.9.1
+
+cd requests-2.9.1
+python setup.py build
+python setup.py install
+cd ..
+rm -fr requests-2.9.1
+
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
 chmod 777 checkBridge.py
