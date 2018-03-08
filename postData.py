@@ -10,7 +10,7 @@ value = bridgeclient()
 #/////////////////////////////////////////////////////////////////////
 device = "PDFtester"
 #url = "http://monitorgeovallas.gpovallas.com/wp-json/int_sens/accesos"
-url = "http://70.35.207.145/ubicacion_vallas_pruebas/wp-json/int_sens/accesos"
+url = "http://monitorgeovallaspruebas.gpovallas.com/wp-json/int_sens/accesos"
 #////////////////////////////////////////////////////////////////////
 
 A0 = value.get('A0')
