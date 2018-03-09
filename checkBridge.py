@@ -13,20 +13,23 @@ from time import sleep
 from bridgeclient import BridgeClient as bridgeclient
 
 os.system('reset-mcu')
-sleep(10)
+
+status = 10
+
+sleep(15)
 
 value = bridgeclient()
 try:
 	status = value.get('statusBridge')
 	status = int(status)
 	print status
-
-	if status == 1:
-		print ("Sistema iniciado correctamente")
-	else:	
-		print("El sistema se reiniciara nuevamente")
 except:
-    print "Bridge did't start"
-    sleep(30)
-    os.system('reboot')
-sys.exit("tatatata")
+	print("No se incio bridge")
+print status
+if status == 1:
+	print ("Sistema iniciado correctamente")
+else:	
+	print("El sistema se reiniciara nuevamente")
+	print "Bridge did't start"
+	sleep(30)
+    	os.system('reboot')
