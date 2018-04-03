@@ -52,9 +52,11 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/if_mail.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/status.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/publicIP.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests.sh
 chmod 777 postData.py
 chmod 777 if_mail.py
 chmod 777 status.sh
+chmod 777 install_requests.sh
 cp status.sh /usr/bin/status
 
 chmod 777 publicIP.py
