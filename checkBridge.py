@@ -14,7 +14,7 @@ from bridgeclient import BridgeClient as bridgeclient
 
 os.system('reset-mcu')
 
-status = 10
+status = 0
 
 sleep(25)
 

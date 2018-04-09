@@ -34,6 +34,17 @@ opkg install python-openssl
 opkg install python-bzip2
 opkg install git
 opkg install subversion-client
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/if_mail.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/status.sh
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/publicIP.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests.sh
+
+
+
+
 svn export https://github.com/flukedf/perimetralFiles/trunk/requests-2.9.1
 
 cd requests-2.9.1
@@ -42,17 +53,12 @@ python setup.py install
 cd ..
 rm -fr requests-2.9.1
 
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
+
 chmod 777 checkBridge.py
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge
 chmod 777 checkBridge
 cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/if_mail.py
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/status.sh
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/publicIP.py
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests.sh
+
 chmod 777 postData.py
 chmod 777 if_mail.py
 chmod 777 status.sh
