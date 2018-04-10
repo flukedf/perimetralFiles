@@ -33,25 +33,35 @@ opkg install distribute
 opkg install python-openssl
 opkg install python-bzip2
 opkg install git
-opkg install subversion-client
+#opkg install subversion-client
+
+
+#svn export https://github.com/flukedf/perimetralFiles/trunk/requests-2.9.1
+#sleep 2
+#rm ~/.subversion/auth/svn.ssl.server/*
+#sleep 2
+#cd requests-2.9.1
+#sleep 2
+#python setup.py build
+#sleep 2
+#python setup.py install
+#sleep 2
+#cd ..
+#sleep 2
+#rm -fr requests-2.9.1
+#sleep 2
+#ls
+
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1.tar.gz
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/if_mail.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/status.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/publicIP.py
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests.sh
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests_iduino.sh
 
-
-
-
-svn export https://github.com/flukedf/perimetralFiles/trunk/requests-2.9.1
-
-cd requests-2.9.1
-python setup.py build
-python setup.py install
-cd ..
-rm -fr requests-2.9.1
+easy_install requests-2.9.1.tar.gz
 
 
 chmod 777 checkBridge.py
@@ -62,12 +72,17 @@ cp checkBridge /etc/init.d/checkBridge
 chmod 777 postData.py
 chmod 777 if_mail.py
 chmod 777 status.sh
-chmod 777 install_requests.sh
+chmod 777 install_requests_iduino.sh
 cp status.sh /usr/bin/status
-
 chmod 777 publicIP.py
 #wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1
 
+svn export https://github.com/flukedf/perimetralFiles/trunk/requests-2.9.1
+cd requests-2.9.1
+python setup.py build
+python setup.py install
+cd ..
+rm -fr requests-2.9.1
 
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
