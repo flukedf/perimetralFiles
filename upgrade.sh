@@ -60,6 +60,8 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/status.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/publicIP.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests_iduino.sh
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
+
 
 easy_install requests-2.9.1.tar.gz
 
@@ -75,18 +77,13 @@ chmod 777 status.sh
 chmod 777 install_requests_iduino.sh
 cp status.sh /usr/bin/status
 chmod 777 publicIP.py
+chmod 777 "$var1".hex
 #wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1
 
-svn export https://github.com/flukedf/perimetralFiles/trunk/requests-2.9.1
-cd requests-2.9.1
-python setup.py build
-python setup.py install
-cd ..
-rm -fr requests-2.9.1
 
 
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
-chmod 777 "$var1".hex
+
+
 merge-sketch-with-bootloader.lua /root/"$var1".hex
 
 run-avrdude /root/"$var1".hex
