@@ -59,7 +59,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/if_mail.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/status.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/publicIP.py
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests_iduino.sh
+#wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests_iduino.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
 
 
@@ -95,4 +95,5 @@ echo
 echo
 echo ---------Reiniciando el Sistema-------------
 reboot
+
 
