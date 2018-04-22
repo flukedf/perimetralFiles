@@ -35,7 +35,8 @@ geo_location = "google.com.mx/maps/@19.464187,-99.2274472,19z"
 #////////////////////////////////////////////////////////
 
 
-me = "cuentaexperimentalvallas@gmail.com"
+#me = "cuentaexperimentalvallas@gmail.com"
+me = "seguridad.pantallas@gpovallas.com"
 to = "fluke.df@gmail.com"#"gonzalez.luis@gpovallas.com,rojas.luis@gpovallas.com,sanchez.ernesto@gpovallas.com,vazquez.adrian@gpovallas.com,ramirez.marcela@gpovallas.com"
 cc = ""#"salas.gustavo@gpovallas.com,mora.enrique@gpovallas.com,castaneda.jose@gpovallas.com,soporte.pantallas@gpovallas.com"
 bcc = "cevallos.gonzalo@gpovallas.com,hernandez.eduardo@gpovallas.com"
@@ -124,7 +125,8 @@ server = smtplib.SMTP('smtp.gmail.com', 587)
 server.ehlo()
 server.starttls()
 server.ehlo()
-server.login(me, "CHEYENNES18")
+#server.login(me, "CHEYENNES18")
+server.login(me, "popocatepetl123")
 text = msg.as_string()
 server.sendmail(me, rcpt, text)
 server.quit()

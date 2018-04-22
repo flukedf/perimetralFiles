@@ -62,10 +62,11 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 #wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests_iduino.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
 
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/YunSerialTerminal.hex
 
 easy_install requests-2.9.1.tar.gz
 
-
+chmod 777 YunSerialTerminal.hex
 chmod 777 checkBridge.py
 chmod 777 checkBridge
 cp checkBridge /etc/init.d/checkBridge
