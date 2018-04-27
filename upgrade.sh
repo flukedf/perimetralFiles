@@ -14,6 +14,7 @@ echo "V230218"
 echo "V180301"
 echo "V180306"
 echo "V180309"
+echo "V180427"
 echo ------------------------------------
 echo
 echo
@@ -63,6 +64,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/YunSerialTerminal.hex
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/service.py
 
 easy_install requests-2.9.1.tar.gz
 
@@ -78,6 +80,7 @@ chmod 777 status.sh
 chmod 777 install_requests_iduino.sh
 cp status.sh /usr/bin/status
 chmod 777 publicIP.py
+chmod 777 service.py
 chmod 777 "$var1".hex
 #wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1
 
