@@ -391,10 +391,10 @@ void setup()
 
 int statusBridge = 1;
 
-for(int t=0;t<30;t++){  
+for(int t=0;t<15;t++){  
     processProg();
 }
-  delay(2000); //The bare minimum needed to be able to reboot both linino and leonardo.
+ /* delay(2000); //The bare minimum needed to be able to reboot both linino and leonardo.
                           // if reboot fails try increasing this number
                           // The more you run on linux the higher this number should be
   Serial1.begin(115200); // Set the baud.
@@ -406,7 +406,7 @@ for(int t=0;t<30;t++){
     delay(1000);
   } while (Serial1.available()>0);
 
-
+*/
 
   
 
@@ -506,8 +506,8 @@ void current(){
 void maintenance(){
     Process Service;
   Service.runShellCommand(F("python /root/service.py"));
-  char lbuffer[10];
-  Bridge.get("statusBridge",lbuffer,10);
+  char lbuffer[256];
+  Bridge.get("statusBridge",lbuffer,256);
   String rest = String(lbuffer);
   int variable = rest.toInt();
   //Console.println(String(variable));
