@@ -16,7 +16,7 @@ os.system('reset-mcu')
 
 status = 0
 
-sleep(25)
+sleep(15)
 
 value = bridgeclient()
 try:
