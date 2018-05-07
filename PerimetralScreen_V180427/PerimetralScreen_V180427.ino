@@ -481,8 +481,8 @@ int inChar = readConsole;
 void current(){
                                         clear();
                                         home();
-                                        maintenance();
                                         time_check();
+                                        maintenance();
                                         typeSensor = Access;
                                         numPto = 6;
                                         startPto = 0;
@@ -512,9 +512,10 @@ void maintenance(){
   int variable = rest.toInt();
   //Console.println(String(variable));
   if(variable == 0){
-              Console.println("Servicio de Mantenimiento Activado");
+              Console.println("Mantenimiento Activado");
               digitalWrite(LED_BUILTIN, LOW);
-                 maintenance();
+              delay(1000);
+               current();
                
                 }else{
                   //Console.println("else");

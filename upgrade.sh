@@ -65,12 +65,14 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/YunSerialTerminal.hex
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/service.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/bridgePrint.py
 
 easy_install requests-2.9.1.tar.gz
 
 chmod 777 YunSerialTerminal.hex
 chmod 777 checkBridge.py
 chmod 777 checkBridge
+chmod 777 bridgePrint.py
 cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
 
