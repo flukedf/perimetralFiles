@@ -97,6 +97,12 @@ String name = "";
 char x;
 String inString = ""; 
 int valor = 0;
+
+
+char lbuffer[2]="0";
+int variable = 0;
+
+
 void clearAndHome()
 {
 /*  Serial.write(27);
@@ -504,23 +510,31 @@ void current(){
    
 }
 void maintenance(){
-    Process Service;
+  Process Service;
   Service.runShellCommand(F("python /root/service.py"));
-  char lbuffer[256];
-  Bridge.get("statusBridge",lbuffer,256);
-  String rest = String(lbuffer);
-  int variable = rest.toInt();
-  //Console.println(String(variable));
-  if(variable == 0){
-              Console.println("Mantenimiento Activado");
+  Bridge.get("statusBridge",lbuffer,2);
+  variable = atoi(lbuffer);
+  while(variable == 0){
+              clear();
+              home();
+              time_check();
+              Console.print(F("==================================\n"));
+              Console.print(F("==================================\n"));                         
+              Console.println(F("Mantenimiento Activado"));
+              Console.print(F("==================================\n"));
+              Console.print(F("==================================\n"));
               digitalWrite(LED_BUILTIN, LOW);
-              delay(1000);
-               current();
+              delay(2000);
+              Process Service;
+  Service.runShellCommand(F("python /root/service.py"));
+  Bridge.get("statusBridge",lbuffer,2);
+  variable = atoi(lbuffer);
+              //loop();
                
-                }else{
+                }//else{
                   //Console.println("else");
                   //digitalWrite(LED_BUILTIN, HIGH);
-                }
+              //  }
 }
 void consola(){
   time_check();
