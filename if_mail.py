@@ -37,7 +37,7 @@ geo_location = "google.com.mx/maps/@19.464187,-99.2274472,19z"
 
 #me = "cuentaexperimentalvallas@gmail.com"
 me = "seguridad.pantallas@gpovallas.com"
-to = "fluke.df@gmail.com"#"gonzalez.luis@gpovallas.com,rojas.luis@gpovallas.com,sanchez.ernesto@gpovallas.com,vazquez.adrian@gpovallas.com,ramirez.marcela@gpovallas.com"
+to = "fluke.df@gmail.com"#"gonzalez.luis@gpovallas.com,rojas.luis@gpovallas.com,sanchez.ernesto@gpovallas.com,vazquez.adrian@gpovallas.com,ramirez.marcela@gpovallas.com,castilla.jorge@gpovallas.com,barrera.luis@gpovallas.com,ponce.cesar@gpovallas.com,cunzo.hernan@gpovallas.com,mendoza.barbara@gpovallas.com,coca.ariadne@gpovallas.com,trejo.gerardo@gpovallas.com,vazquez.francisco@gpovallas.com,flores.erick@gpovallas.com"
 cc = ""#"salas.gustavo@gpovallas.com,mora.enrique@gpovallas.com,castaneda.jose@gpovallas.com,soporte.pantallas@gpovallas.com"
 bcc = "cevallos.gonzalo@gpovallas.com,hernandez.eduardo@gpovallas.com"
 
