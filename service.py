@@ -1,19 +1,30 @@
-import requests
-import sys
-#import os
 sys.path.insert(0, '/usr/lib/python2.7/bridge')
  
 from time import sleep
  
 from bridgeclient import BridgeClient as bridgeclient
 
+import ConfigParser
+
 value = bridgeclient()
 
+#url = "http://monitorgeovallas.gpovallas.com/wp-json/get_data/screen/"
+#pdfCode = "PDF1018"
 
-url = "http://monitorgeovallas.gpovallas.com/wp-json/get_data/screen/"
-pdfCode = "PDF1018"
+parser = ConfigParser.ConfigParser()
+parser.read('/root/config.conf')
+
+
+pdfCode = parser.get('devicee','device_hardware')
+url = parser.get('devicee','url_service')
+
+
+print pdfCode
+print url
+print url+pdfCode
 
 r = requests.get(url+pdfCode)
+
 print r.text
 if "1" in r.text:
 	status = value.put('statusBridge',"1")
@@ -32,9 +43,6 @@ else:
 
 
 #print(r.status_code, r.reason)
-
-
-
 
 
 
