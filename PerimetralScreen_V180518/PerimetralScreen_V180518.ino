@@ -411,6 +411,7 @@ for(int t=0;t<15;t++){
         }
     delay(1000);
   } while (Serial1.available()>0);
+
 */
 
   
@@ -510,7 +511,7 @@ void current(){
 }
 void maintenance(){
   Process Service;
-  Service.runShellCommand(F("python /root/service.py"));
+  Service.runShellCommand(F("sudo python /root/service.py"));
   Bridge.get("statusBridge",lbuffer,2);
   variable = atoi(lbuffer);
   while(variable == 0){
@@ -525,7 +526,7 @@ void maintenance(){
               digitalWrite(LED_BUILTIN, LOW);
               delay(2000);
               Process Service;
-  Service.runShellCommand(F("python /root/service.py"));
+  Service.runShellCommand(F("sudo python /root/service.py"));
   Bridge.get("statusBridge",lbuffer,2);
   variable = atoi(lbuffer);
               //loop();
@@ -711,3 +712,6 @@ void loop()
                 }
   }
 }
+
+
+

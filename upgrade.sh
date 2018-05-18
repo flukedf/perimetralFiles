@@ -34,6 +34,7 @@ opkg install distribute
 opkg install python-openssl
 opkg install python-bzip2
 opkg install git
+opkg install sudo
 #opkg install subversion-client
 
 
@@ -79,7 +80,7 @@ cp checkBridge /etc/init.d/checkBridge
 chmod 777 postData.py
 chmod 777 if_mail.py
 chmod 777 status.sh
-chmod 777 install_requests_iduino.sh
+#chmod 777 install_requests_iduino.sh
 cp status.sh /usr/bin/status
 chmod 777 publicIP.py
 chmod 777 service.py
