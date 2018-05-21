@@ -33,7 +33,7 @@ opkg update
 opkg install distribute
 opkg install python-openssl
 opkg install python-bzip2
-opkg install git
+#opkg install git
 opkg install sudo
 #opkg install subversion-client
 

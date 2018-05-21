@@ -1,3 +1,12 @@
+#!/usr/bin/python
+import os
+import subprocess
+
+
+
+import requests
+import sys
+#import os
 sys.path.insert(0, '/usr/lib/python2.7/bridge')
  
 from time import sleep
@@ -27,14 +36,14 @@ r = requests.get(url+pdfCode)
 
 print r.text
 if "1" in r.text:
-	status = value.put('statusBridge',"1")
+	status = value.put('statusService',"1")
 	status = int(status)
 	print status
 	print"ON"
 	r = requests.post(url, data={'ID':(pdfCode),'resp':("1")})
 
 else:
-	status = value.put('statusBridge',"0")
+	status = value.put('statusService',"0")
 	status = int(status)
 	print status
 	print"OFF"
@@ -43,6 +52,9 @@ else:
 
 
 #print(r.status_code, r.reason)
+
+
+
 
 
 

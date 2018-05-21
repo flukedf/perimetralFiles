@@ -512,7 +512,7 @@ void current(){
 void maintenance(){
   Process Service;
   Service.runShellCommand(F("sudo python /root/service.py"));
-  Bridge.get("statusBridge",lbuffer,2);
+  Bridge.get("statusService",lbuffer,2);
   variable = atoi(lbuffer);
   while(variable == 0){
               clear();
@@ -527,7 +527,7 @@ void maintenance(){
               delay(2000);
               Process Service;
   Service.runShellCommand(F("sudo python /root/service.py"));
-  Bridge.get("statusBridge",lbuffer,2);
+  Bridge.get("statusService",lbuffer,2);
   variable = atoi(lbuffer);
               //loop();
                
