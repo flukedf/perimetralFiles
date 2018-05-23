@@ -2,16 +2,19 @@ import sys
 import requests
 sys.path.insert(0, '/usr/lib/python2.7/bridge/')
 from bridgeclient import BridgeClient as bridgeclient
+import ConfigParser
+
+parser = ConfigParser.ConfigParser()
+parser.read('/root/config.conf')
+
 value = bridgeclient()
 #value.put("D12","Test")
 
 #device = value.get('device')
 
-#/////////////////////////////////////////////////////////////////////
-device = "PDFtester"
-#url = "http://monitorgeovallas.gpovallas.com/wp-json/int_sens/accesos"
-url = "http://monitorgeovallaspruebas.gpovallas.com/wp-json/int_sens/accesos"
-#////////////////////////////////////////////////////////////////////
+
+device = parser.get('device','codePDF')
+url = parser.get('post','url')
 
 A0 = value.get('A0')
 A1 = value.get('A1')

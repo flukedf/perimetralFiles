@@ -15,6 +15,8 @@ echo "V180301"
 echo "V180306"
 echo "V180309"
 echo "V180427"
+echo "V180518"
+echo "V180522"
 echo ------------------------------------
 echo
 echo
@@ -33,9 +35,7 @@ opkg update
 opkg install distribute
 opkg install python-openssl
 opkg install python-bzip2
-#opkg install git
 opkg install sudo
-opkg remove git
 opkg remove temboo
 #opkg install subversion-client
 

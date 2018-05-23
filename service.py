@@ -24,8 +24,8 @@ parser = ConfigParser.ConfigParser()
 parser.read('/root/config.conf')
 
 
-pdfCode = parser.get('devicee','device_hardware')
-url = parser.get('devicee','url_service')
+pdfCode = parser.get('device','codePDF')
+url = parser.get('service','url')
 
 
 print pdfCode
