@@ -69,6 +69,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/YunSerialTerminal.hex
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/service.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/bridgePrint.py
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/config.conf
 
 easy_install requests-2.9.1.tar.gz
 
