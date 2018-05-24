@@ -37,6 +37,7 @@ opkg install python-openssl
 opkg install python-bzip2
 opkg install sudo
 opkg remove temboo
+opkg install nano
 #opkg install subversion-client
 
 
