@@ -91,10 +91,24 @@ chmod 777 service.py
 chmod 777 "$var1".hex
 #wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1
 
+###########################
+echo '----------------------Introduzca Clave de Ubicación-----------------------------'
+read ubicacion
+echo $ubicacion
+echo 
+echo
+echo
+uci show system
+uci set system.@system[0].hostname=wallace
+uci set system.vendor.hostname=wallace
+uci set system.@system[0].zonename=America/Mexico City
+uci set system.@system[0].timezone=CST6CDT,M4.1.0,M10.5.0
+uci set system.vendor.zonename=America/Mexico City
+uci set system.vendor.timezone=CST6CDT,M4.1.0,M10.5.0
+uci commit system
+luci-reload
 
-
-
-
+##########################
 merge-sketch-with-bootloader.lua /root/"$var1".hex
 
 run-avrdude /root/"$var1".hex
