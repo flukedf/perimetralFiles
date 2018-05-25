@@ -99,11 +99,11 @@ echo
 echo
 echo
 uci show system
-uci set system.@system[0].hostname=wallace
-uci set system.vendor.hostname=wallace
-uci set system.@system[0].zonename=America/Mexico City
+uci set system.@system[0].hostname=$ubicacion
+uci set system.vendor.hostname=$ubicacion
+uci set system.@system[0].zonename="America/Mexico City"
 uci set system.@system[0].timezone=CST6CDT,M4.1.0,M10.5.0
-uci set system.vendor.zonename=America/Mexico City
+uci set system.vendor.zonename="America/Mexico City"
 uci set system.vendor.timezone=CST6CDT,M4.1.0,M10.5.0
 uci commit system
 luci-reload
