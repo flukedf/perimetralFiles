@@ -92,8 +92,8 @@ chmod 777 "$var1".hex
 #wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1
 
 echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
-echo '00 12 * * * "reboot"'>>/etc/croontabs/root
-echo '00 00 * * * "reboot"'>>/etc/croontabs/root
+echo '00 12 * * * "reboot"'>>/etc/crontabs/root
+echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 ###########################
 echo '----------------------Introduzca Clave de Ubicación-----------------------------'
 read ubicacion
