@@ -98,6 +98,15 @@ echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 echo '----------------------Introduzca Clave de Ubicación-----------------------------'
 read ubicacion
 echo $ubicacion
+sed -i 's/^codePDF.*/codePDF = '$ubicacion'/g' /root/config.conf
+echo '----------------------Introduzca Latitud-----------------------------'
+read lat
+echo $lat
+sed -i 's/^lat.*/lat = '$lat'/g' /root/config.conf
+echo '----------------------Introduzca Longitud-----------------------------'
+read lon
+echo $lon
+sed -i 's/^lon.*/lon = '$lon'/g' /root/config.conf
 echo 
 echo
 echo
