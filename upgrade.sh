@@ -4,27 +4,10 @@
 #Author: Gonzalo Silverio  -> gonzasilve@gmail.com
 #Archivo: script2.sh
 #pedir el dato al usuario
-echo '----------------------Introduzca Version de Firmware:-----------------------------'
-#leer el dato del teclado y guardarlo en la variable de usuario var1
-echo "----------------------Versiones Disponibles----------------------"
-echo ------------------------------------
-echo "screen"
-echo "PerimetralScreen"
-echo "V230218"
-echo "V180301"
-echo "V180306"
-echo "V180309"
-echo "V180427"
-echo "V180518"
-echo "V180522"
-echo ------------------------------------
-echo
-echo
-echo
-echo
-read var1
+#read var1
 #Mostrar el valor de la variable de usuario
-echo Version Seleccionada:
+$var = V180522
+echo Version:
 echo
 echo $var1
 echo 
@@ -71,6 +54,9 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/service.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/bridgePrint.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/config.conf
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/at_3.1.13-1_ar71xx.ipk
+
+opkg install at_3.1.13-1_ar71xx.ipk
 
 easy_install requests-2.9.1.tar.gz
 
@@ -107,6 +93,10 @@ echo '----------------------Introduzca Longitud-----------------------------'
 read lon
 echo $lon
 sed -i 's/^lon.*/lon = '$lon'/g' /root/config.conf
+echo '----------------------Introduzca Nombre de la ubicacion-------------------------'
+read locationName
+echo $locationName
+sed -i 's/^lon.*/lon = '$locationName'/g' /root/config.conf
 echo 
 echo
 echo
