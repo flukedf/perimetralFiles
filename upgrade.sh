@@ -6,7 +6,7 @@
 #pedir el dato al usuario
 #read var1
 #Mostrar el valor de la variable de usuario
-$var = V180522
+$var = "V180522"
 echo Version:
 echo
 echo $var1
