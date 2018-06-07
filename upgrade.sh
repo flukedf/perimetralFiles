@@ -13,6 +13,14 @@ echo '==========================================='
 echo '==========================================='
 echo Iniciando Instalacion Seguridad Perimetral
 echo '==========================================='
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
 opkg update
 opkg install distribute
 opkg install python-openssl
