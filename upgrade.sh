@@ -1,12 +1,17 @@
 #!/bin/bash
 
 var1=V180522
-echo '==========================================='
-echo Version: $var1
-echo '==========================================='
-echo '==========================================='
-echo Iniciando Instalacion Seguridad Perimetral
-echo '==========================================='
+echo '================================================================================'
+echo                                 Fimware Version: $var1
+echo '================================================================================'
+echo
+echo
+echo
+sleep 2
+echo '================================================================================'
+echo                        Iniciando Instalacion Seguridad Perimetral
+echo '================================================================================'
+sleep 4
 echo
 echo
 echo
@@ -60,19 +65,27 @@ echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
 echo '00 12 * * * "reboot"'>>/etc/crontabs/root
 echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 ###########################
-echo '----------------------Introduzca Clave de Ubicación-----------------------------'
+echo '================================================================================'
+echo                              Introduzca Clave de Ubicación
+echo '================================================================================'
 read ubicacion
 echo $ubicacion
 sed -i 's/^codePDF.*/codePDF = '$ubicacion'/g' /root/config.conf
-echo '----------------------Introduzca Latitud-----------------------------'
+echo '================================================================================'
+echo                              Introduzca Latitud
+echo '================================================================================'
 read lat
 echo $lat
 sed -i 's/^lat.*/lat = '$lat'/g' /root/config.conf
-echo '----------------------Introduzca Longitud-----------------------------'
+echo '================================================================================'
+echo                              Introduzca Longitud
+echo '================================================================================'
 read lon
 echo $lon
 sed -i 's/^lon.*/lon = '$lon'/g' /root/config.conf
-echo '----------------------Introduzca Nombre de la ubicacion-------------------------'
+echo '================================================================================'
+echo                             Introduzca Nombre de Ubicacion
+echo '================================================================================'
 read locationName
 echo $locationName
 sed -i 's/^lon.*/lon = '$locationName'/g' /root/config.conf
@@ -101,6 +114,7 @@ echo
 echo '==========================================='
 echo            Finalizando Instalacion
 echo '==========================================='
+sleep 2
 echo
 echo
 echo
@@ -110,6 +124,7 @@ echo
 echo '==========================================='
 echo            Reiniciando el Sistema
 echo '==========================================='
+sleep 2
 echo
 echo
 echo
