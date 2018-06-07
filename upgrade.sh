@@ -1,11 +1,5 @@
 #!/bin/bash
-#Ejemplo #2: Script que muestra como asignar valores a variables en forma interactiva por el
-#            usuario, uso de la funcion read.
-#Author: Gonzalo Silverio  -> gonzasilve@gmail.com
-#Archivo: script2.sh
-#pedir el dato al usuario
-#read var1
-#Mostrar el valor de la variable de usuario
+
 var1=V180522
 echo '==========================================='
 echo Version: $var1
@@ -28,24 +22,6 @@ opkg install python-bzip2
 opkg install sudo
 opkg remove temboo
 opkg install nano
-#opkg install subversion-client
-
-
-#svn export https://github.com/flukedf/perimetralFiles/trunk/requests-2.9.1
-#sleep 2
-#rm ~/.subversion/auth/svn.ssl.server/*
-#sleep 2
-#cd requests-2.9.1
-#sleep 2
-#python setup.py build
-#sleep 2
-#python setup.py install
-#sleep 2
-#cd ..
-#sleep 2
-#rm -fr requests-2.9.1
-#sleep 2
-#ls
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1.tar.gz
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
@@ -54,9 +30,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/if_mail.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/status.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/publicIP.py
-#wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/install_requests_iduino.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/"$var1".hex
-
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/YunSerialTerminal.hex
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/service.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/bridgePrint.py
@@ -77,12 +51,10 @@ cp checkBridge /etc/init.d/checkBridge
 chmod 777 postData.py
 chmod 777 if_mail.py
 chmod 777 status.sh
-#chmod 777 install_requests_iduino.sh
 cp status.sh /usr/bin/status
 chmod 777 publicIP.py
 chmod 777 service.py
 chmod 777 "$var1".hex
-#wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1
 
 echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
 echo '00 12 * * * "reboot"'>>/etc/crontabs/root
@@ -121,13 +93,27 @@ luci-reload
 merge-sketch-with-bootloader.lua /root/"$var1".hex
 
 run-avrdude /root/"$var1".hex
-
+rm requests-2.9.1.tar.gz
+rm at_3.1.13-1_ar71xx.ipk
+rm /root/"$var1".hex
 echo
 #Avisar al usuario que se ha terminado de ejecutar el script 
-echo ---------Fin del script.-------------
+echo '==========================================='
+echo            Finalizando Instalacion
+echo '==========================================='
 echo
 echo
-echo ---------Reiniciando el Sistema-------------
+echo
+echo
+echo
+echo
+echo '==========================================='
+echo            Reiniciando el Sistema
+echo '==========================================='
+echo
+echo
+echo
+echo
 reboot
 
 
