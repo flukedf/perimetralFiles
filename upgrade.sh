@@ -7,13 +7,12 @@
 #read var1
 #Mostrar el valor de la variable de usuario
 var1=V180522
-echo Version:
-echo
-echo $var1
-echo 
-echo
-echo
-
+echo '==========================================='
+echo Version: $var1
+echo '==========================================='
+echo '==========================================='
+echo Iniciando Instalacion Seguridad Perimetral
+echo '==========================================='
 opkg update
 opkg install distribute
 opkg install python-openssl
