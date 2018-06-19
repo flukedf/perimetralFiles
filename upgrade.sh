@@ -50,6 +50,7 @@ chmod 777 YunSerialTerminal.hex
 chmod 777 checkBridge.py
 chmod 777 checkBridge
 chmod 777 bridgePrint.py
+chmod 777 config.conf
 cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
 
