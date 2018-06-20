@@ -102,6 +102,9 @@ uci set system.vendor.zonename="America/Mexico City"
 uci set system.vendor.timezone=CST6CDT,M4.1.0,M10.5.0
 uci commit system
 luci-reload
+sudo /etc/init.d/atd start
+sudo /etc/init.d/atd enable
+
 
 ##########################
 merge-sketch-with-bootloader.lua /root/"$var1".hex
