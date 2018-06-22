@@ -36,4 +36,8 @@ Rebooting
 bootm 0x9fea0000
 
 
+reset-to-factory-anyway && reboot
 
+
+
+sysupgrade -n -v lininoIO-generic-linino-yun-squashfs-sysupgrade.bin
