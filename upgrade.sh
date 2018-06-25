@@ -89,7 +89,7 @@ echo                             Introduzca Nombre de Ubicacion
 echo '================================================================================'
 read locationName
 echo $locationName
-sed -i 's/^lon.*/lon = '$locationName'/g' /root/config.conf
+sed -i 's/^locationName.*/locationName = '$locationName'/g' /root/config.conf
 echo 
 echo
 echo
