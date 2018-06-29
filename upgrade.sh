@@ -62,12 +62,12 @@ chmod 777 publicIP.py
 chmod 777 service.py
 chmod 777 "$var1".hex
 
-echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
+echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root && python /root/checkBridge.py
 echo '00 12 * * * "reboot"'>>/etc/crontabs/root
 echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 ###########################
 echo '================================================================================'
-echo                              Introduzca Clave de Ubicación
+echo                              Introduzca Clave de Ubicacion
 echo '================================================================================'
 read ubicacion
 echo $ubicacion
