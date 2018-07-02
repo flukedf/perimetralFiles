@@ -63,7 +63,7 @@ chmod 777 service.py
 chmod 777 "$var1".hex
 
 echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
-echo '10 * * * * "python /root/checkBridge.py"'>>/etc/crontabs/root
+echo '11 * * * * "python /root/checkBridge.py"'>>/etc/crontabs/root
 echo '00 12 * * * "reboot"'>>/etc/crontabs/root
 echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 ###########################
