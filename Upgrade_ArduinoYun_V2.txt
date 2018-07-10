@@ -1,0 +1,43 @@
+
+setenv serverip 192.168.1.96;
+
+setenv ipaddr 192.168.1.78;
+======================================
+Reflashing U-Boot (optional)
+======================================
+tftp 0x80060000 openwrt-ar71xx-generic-linino-u-boot.bin;
+
+erase 0x9f000000 +0x40000;
+cp.b $fileaddr 0x9f000000 $filesize;
+erase 0x9f040000 +0x10000
+
+======================================
+Reflashing Kernel
+======================================
+
+tftp 0x80060000 openwrt-ar71xx-generic-yun-16M-kernel.bin;
+
+erase 0x9fEa0000 +0x140000;
+cp.b $fileaddr 0x9fea0000 $filesize;
+
+======================================
+Reflashing OpenWrt-Yun
+======================================
+
+tftp 0x80060000 openwrt-ar71xx-generic-yun-16M-rootfs-squashfs.bin;
+
+erase 0x9f050000 +0xE50000;
+cp.b $fileaddr 0x9f050000 $filesize;
+
+======================================
+Rebooting
+======================================
+
+bootm 0x9fea0000
+
+
+reset-to-factory-anyway && reboot
+
+
+
+sysupgrade -n -v lininoIO-generic-linino-yun-squashfs-sysupgrade.bin
