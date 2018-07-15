@@ -95,6 +95,7 @@ echo $locationName
 sed -i 's/^locationName.*/locationName = '$locationName'/g' /root/config.conf
 echo 
 echo
+/etc/init.d/watchcat enable
 echo
 uci show system
 uci set system.@system[0].hostname=$ubicacion
@@ -107,7 +108,7 @@ uci set system.@watchcat[0]=watchcat
 uci set system.@watchcat[0].pinghost=8.8.8.8
 uci set system.@watchcat[0].mode=ping
 uci set system.@watchcat[0].pingperiod=10m
-uci set system.@watchcat[0].period=10m
+uci set system.@watchcat[0].period=30m
 uci set system.@watchcat[0].forcedelay=240
 uci commit system
 luci-reload
