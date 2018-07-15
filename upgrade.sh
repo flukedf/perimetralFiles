@@ -27,6 +27,8 @@ opkg install python-bzip2
 opkg install sudo
 opkg remove temboo
 opkg install nano
+opkg install watchcat
+opkg install luci-app-watchcat
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1.tar.gz
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
