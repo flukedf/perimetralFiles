@@ -430,8 +430,7 @@ ads02.begin();
 Bridge.put("deviceEmail", String(deviceEmail));
 Bridge.put("t", String("0"));
 Bridge.put(String("statusBridge"),String(statusBridge));
-digitalWrite(6,LOW);
-digitalWrite(7,HIGH);
+
 }
 ///////////////////////////////////////////////
 void serviceTime(){
@@ -490,6 +489,8 @@ int inChar = readConsole;
 ////////////////////////////////////////////////////
 }
 void current(){
+                                        digitalWrite(6,LOW);
+                                        digitalWrite(7,HIGH);
                                         clear();
                                         home();
                                         time_check();
@@ -512,7 +513,9 @@ void current(){
                                         //delay(250);
                                         postData();
                                         //delay(60000); 
-                                        deviceEmail = 0;         
+                                        deviceEmail = 0;
+                                        digitalWrite(6,HIGH);
+                                        digitalWrite(7,LOW);
    
 }
 void resetNuc(){
