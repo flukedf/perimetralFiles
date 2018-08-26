@@ -20,13 +20,13 @@ try:
 	status = int(status)
 	print status
 except:
-	print("No se incio bridge")
+	print("No se incio MCU")
 print status
 if status == 1:
-	print ("Sistema iniciado correctamente")
+	print ("MCU iniciado correctamente")
 else:	
-	print("El sistema se reiniciara nuevamente")
-	print "Bridge did't start"
+	print("MCU se reiniciara nuevamente")
+	print "MCU didn't start"
 	os.system('reset-mcu')
 	#sleep(30)
     #os.system('reboot')
