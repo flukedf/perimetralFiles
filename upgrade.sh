@@ -56,6 +56,7 @@ chmod 777 checkBridge.py
 chmod 777 checkBridge
 chmod 777 bridgePrint.py
 chmod 777 config.conf
+chmod 777 checkInit.py
 cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
 
