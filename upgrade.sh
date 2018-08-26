@@ -67,6 +67,8 @@ cp status.sh /usr/bin/status
 chmod 777 publicIP.py
 chmod 777 service.py
 chmod 777 "$var1".hex
+cp factoryReset.sh /usr/bin/factoryReset
+
 
 echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
 #echo '15 * * * * "python /root/checkBridge.py"'>>/etc/crontabs/root
