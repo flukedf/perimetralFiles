@@ -101,6 +101,7 @@ int valor = 0;
 
 char lbuffer[2]="0";
 int variable = 0;
+int ptoReset = 0;
 
 
 void clearAndHome()
@@ -250,7 +251,7 @@ void minutesEmail(){
                                         //delay(120000);                                   
                                       }
                                   
-                    if(timeMin[workTime] == 10){
+                    if(timeMin[workTime] == 15){
                                                 timeMin[workTime] = 1;
                                                 Console.println("reiniciar a cero\n");
                                           }else{
@@ -259,12 +260,12 @@ void minutesEmail(){
   }
 
 void list_magnetic(){
-
+processProg();
    pi = 0;
    Console.print(String(typeSensor)+String(F("\n"))); 
     Console.print(F("==================================\n")); 
     for (int i=startPto;i<numPto;i++){
-         processProg();
+         
          Wire.requestFrom(PCF_address[pi],1);
          if(Wire.available())  
            read_pto = Wire.read();
@@ -301,16 +302,17 @@ void list_magnetic(){
 
         }
 void listADC(){
+  processProg();
                 Console.print(String(typeSensor)+String(F("\n"))); 
                 Console.print(F("==================================\n"));
                 for(int t=0;t<3;t++){
-                                    processProg();
+                                    
                                     if(goAmp==3){
                                                   goAmp=0;
                                                 }
                                     double Irms = calcIrms(64, 0.125F,4.5) / 100;
                                     Console.print(((String("Hook "))+String(goAmp)+(String("\t")))); 
-                                    Console.print((Irms*126.0)+String(" Watts"));        // Apparent power
+                                    Console.print((Irms*130.0)+String(" Watts"));        // Apparent power
                                     Console.print(" ");
                                     Console.println(Irms+(String(" Amps")));            // Irms
                                     PH[goAmp] = Irms;
@@ -335,6 +337,8 @@ void listADC(){
                                     Bridge.put(String("PH")+String(goAmp),String(Irms));
                                     goAmp += 1;
                                    }
+                                   Console.print(F("==================================\n"));
+                                   Bridge.put("deviceEmail", String(deviceEmail));
               }
 ////////////////////////////////////////////////              
 void time_check(){
@@ -376,7 +380,7 @@ void time_check(){
           */                                   
   
   }
- if (lastSecond != seconds) { // if a second has passed
+ /*if (lastSecond != seconds) { // if a second has passed
     // print the time:
     if (hours <= 9) Console.print("0");    // adjust for 0-9
     Console.print(hours);
@@ -388,12 +392,14 @@ void time_check(){
     Console.println(seconds);
     // restart the date process:
 
-  }
+  }*/
 }
 ////////////////////////////////////////////////
 void setup()
 {
   pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
 
 int statusBridge = 1;
 
@@ -427,6 +433,7 @@ ads02.begin();
 Bridge.put("deviceEmail", String(deviceEmail));
 Bridge.put("t", String("0"));
 Bridge.put(String("statusBridge"),String(statusBridge));
+
 }
 ///////////////////////////////////////////////
 void serviceTime(){
@@ -485,10 +492,15 @@ int inChar = readConsole;
 ////////////////////////////////////////////////////
 }
 void current(){
+                                        digitalWrite(6,LOW);
+                                        digitalWrite(7,HIGH);
                                         clear();
                                         home();
+                                        statusBridge = 1;
+                                        Bridge.put(String("statusBridge"),String(statusBridge));
                                         time_check();
                                         maintenance();
+                                        //resetNuc();
                                         typeSensor = Access;
                                         numPto = 6;
                                         startPto = 0;
@@ -506,8 +518,33 @@ void current(){
                                         //delay(250);
                                         postData();
                                         //delay(60000); 
-                                        deviceEmail = 0;         
+                                        Bridge.put("deviceEmail", String(deviceEmail));
+                                        deviceEmail = 0;
+                                        digitalWrite(6,HIGH);
+                                        digitalWrite(7,LOW);
+                                        statusBridge = 0;
+                                        Bridge.put(String("statusBridge"),String(statusBridge));
+
+                                        //Console.println(deviceEmail);
+                                        
    
+}
+void resetNuc(){
+  Process resetNuc;
+  resetNuc.runShellCommand(F("sudo python /root/resetNuc.py"));
+  Bridge.get("resetNuc",lbuffer,2);
+  ptoReset = atoi(lbuffer);
+  Console.println(ptoReset);
+  if (ptoReset == 1) {
+    Console.print(F("==============Reset ON====================\n"));
+          digitalWrite(7,HIGH); 
+          ptoReset = 0;    
+
+  }
+  else{
+        Console.print(F("==============Reset OFF====================\n"));
+    digitalWrite(7,LOW);
+  }
 }
 void maintenance(){
   Process Service;
@@ -523,22 +560,35 @@ void maintenance(){
               Console.println(F("Mantenimiento Activado"));
               Console.print(F("==================================\n"));
               Console.print(F("==================================\n"));
+              Console.println(variable);
               digitalWrite(LED_BUILTIN, LOW);
               delay(2000);
               Process Service;
   Service.runShellCommand(F("sudo python /root/service.py"));
   Bridge.get("statusService",lbuffer,2);
   variable = atoi(lbuffer);
+  Console.println(variable);
+  if (variable == 1){
+                                            Process resett;
+                                        resett.runShellCommand(F("reset-mcu"));
+                                        Console.print(F("===========Reset Inicio==========\n"));
+                                        
+  }
+
+  
               //loop();
                
                 }//else{
                   //Console.println("else");
                   //digitalWrite(LED_BUILTIN, HIGH);
               //  }
+
 }
 void consola(){
-  time_check();
-  Console.print(F("==================================\n"));
+    time_check();
+    statusBridge = 1;
+    Bridge.put(String("statusBridge"),String(statusBridge));
+    Console.print(F("==================================\n"));
     Console.println(F("Consola de Servicio"));
     Console.print(F("==================================\n"));
     delay(1000);
@@ -604,6 +654,8 @@ if (Console.available() > 0) {
                                             home();                               
                                        
                                        do{
+                                        clear();
+                                        home();
                                         typeSensor = Access;
                                         numPto = 6;
                                         startPto = 0;
@@ -618,9 +670,8 @@ if (Console.available() > 0) {
                                         //delay(250);   
                                         typeSensor = Phase;
                                         listADC();                                           
-                             
-                                            readConsole = Console.read();
-                                            home(); 
+                                        readConsole = Console.read();
+                                        //home(); 
                                        }while(readConsole != '\n');
                                        clear();
                                        clearAndHome();  
@@ -648,7 +699,27 @@ if (Console.available() > 0) {
                                         listADC();
                                        name = "";
                                        readConsole = "";
-                                       }                                      
+                                       }   
+                                      if (name == "pc_on"){
+                                       digitalWrite(7,HIGH);
+                                       name = "";
+                                       readConsole = "";
+                                       }   
+                                      if (name == "pc_off"){
+                                       digitalWrite(7,LOW);
+                                       name = "";
+                                       readConsole = "";
+                                       }   
+                                      if (name == "extra_on"){
+                                       digitalWrite(6,HIGH);
+                                       name = "";
+                                       readConsole = "";
+                                       }   
+                                      if (name == "extra_off"){
+                                       digitalWrite(6,LOW);
+                                       name = "";
+                                       readConsole = "";
+                                       }                             
                                       if (name != 0){
                                          name = "";
                                        readConsole = "";
@@ -681,7 +752,7 @@ void sentMail(){
 void postData(){
                  Process inDataSensor;
                  inDataSensor.runShellCommand(F("sudo python /root/postData.py"));
-                 Console.print(F("\n Post Data MySQL...\n"));
+                 Console.print(F("\n Post Data DB...\n"));
                  //delay(1000);
 }
 void processProg(){
@@ -695,7 +766,7 @@ void processProg(){
 void loop()
 {
   current(); 
-  for (int i=0;i<24;i++){
+  /*for (int i=0;i<5;i++){
     delay(500);
     Console.print(F("."));
     digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
@@ -703,14 +774,17 @@ void loop()
     digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
                                        // wait for a second
     
-  char readConsole = Console.read();
+
+  }*/
+delay(500);
+
+    char readConsole = Console.read();
   if(readConsole == '\n'){
                   clear();
                   home();
                   consola();
                       
                 }
-  }
 }
 
 

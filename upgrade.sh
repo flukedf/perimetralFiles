@@ -43,6 +43,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/service.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/bridgePrint.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/config.conf
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkInit.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/at_3.1.13-1_ar71xx.ipk
 
 opkg install at_3.1.13-1_ar71xx.ipk
