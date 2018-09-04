@@ -44,5 +44,24 @@ else:
 	print("MCU se reiniciara nuevamente")
 	print ("MCU didn't start")
 	os.system('reset-mcu')
+	try:
+		sleep(15)
+		status = value.get('statusBridge')
+		status = int(status)
+		print("Valor Status 2")
+		print status
+		carry = carry + status
+		print ("Valor Carry 2")	
+		print carry
+		if carry != 0:
+	    	print ("MCU iniciado correctamente")
+
+	except:
+		print("No se incio MCU 2")
+		print ("Valor Status 2")
+		print status
+		print ("Reboot")
+		os.system('reboot')
+
 		#sleep(30)
-    	#os.system('reboot')
+    	

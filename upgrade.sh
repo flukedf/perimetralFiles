@@ -47,8 +47,10 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkInit.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/factoryReset.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/at_3.1.13-1_ar71xx.ipk
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/tree_1.7.0-1_ar71xx.ipk
 
 opkg install at_3.1.13-1_ar71xx.ipk
+opkg install tree_1.7.0-1_ar71xx.ipk
 
 easy_install requests-2.9.1.tar.gz
 
@@ -130,6 +132,7 @@ merge-sketch-with-bootloader.lua /root/"$var1".hex
 run-avrdude /root/"$var1".hex
 rm requests-2.9.1.tar.gz
 rm at_3.1.13-1_ar71xx.ipk
+rm  
 rm /root/"$var1".hex
 echo
 #Avisar al usuario que se ha terminado de ejecutar el script 
