@@ -22,47 +22,33 @@ try:
 	for x in range(2):
  		status = value.get('statusBridge')
 		status = int(status)
-		print("Valor Status")
-		print status
+		print("Valor Status",status)
 		carry = carry + status
 		sleep(7.5)
-		print ("Valor Carry")	
-		print carry
+		print ("Valor Carry",carry)	
 
 
 except:
-	print("No se incio MCU")
-	print ("Valor Status")
-	print status
-
-
-
-
+	print("No se incio MCU","Status",status)
 
 
 if carry != 0:
 	print ("MCU iniciado correctamente")
 else:	
-	print("MCU se reiniciara nuevamente")
-	print ("MCU didn't start")
+	print("MCU se reiniciara nuevamente","MCU didn't start")
 	os.system('reset-mcu')
 	try:
 		sleep(15)
 		status = value.get('statusBridge')
 		status = int(status)
-		print("Valor Status 2")
-		print status
+		print("Valor Status 2",status)
 		carry = carry + status
-		print ("Valor Carry 2")	
-		print carry
+		print ("Valor Carry 2",carry)	
 		if carry != 0:
 			print ("MCU iniciado correctamente")
 
 	except:
-		print("No se incio MCU 2")
-		print ("Valor Status 2")
-		print status
-		print ("Reboot")
+		print("No se incio MCU 2","Valor Status 2",status,"Reboot")
 		os.system('reboot')
 
 		#sleep(30)
