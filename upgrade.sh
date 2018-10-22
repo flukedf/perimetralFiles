@@ -77,8 +77,8 @@ cp factoryReset.sh /usr/bin/factoryReset
 echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
 #echo '15 * * * * "python /root/checkBridge.py"'>>/etc/crontabs/root
 echo '*/5 * * * * "python /root/checkInit.py"'>>/etc/crontabs/root
-echo '00 12 * * * "reboot"'>>/etc/crontabs/root
-echo '00 00 * * * "reboot"'>>/etc/crontabs/root
+#echo '00 12 * * * "reboot"'>>/etc/crontabs/root
+#echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 ###########################
 echo '================================================================================'
 echo                              Introduzca Clave de Ubicacion
