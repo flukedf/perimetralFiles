@@ -1,2 +1,2 @@
   #!/bin/bash
-python checkInit.py >> test.log
+python checkInit.py >> init.log

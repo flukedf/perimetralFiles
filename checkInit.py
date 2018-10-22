@@ -12,6 +12,8 @@ from time import sleep
  
 from bridgeclient import BridgeClient as bridgeclient
 
+os.system('date')
+
 status = 0
 carry = 0
 
