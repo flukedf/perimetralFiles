@@ -54,7 +54,7 @@ else:
 		print ("Valor Carry 2")	
 		print carry
 		if carry != 0:
-	    	print ("MCU iniciado correctamente")
+			print ("MCU iniciado correctamente")
 
 	except:
 		print("No se incio MCU 2")
