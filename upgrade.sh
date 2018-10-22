@@ -48,6 +48,8 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/factoryReset.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/at_3.1.13-1_ar71xx.ipk
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/tree_1.7.0-1_ar71xx.ipk
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkInit.sh
+
 
 opkg install at_3.1.13-1_ar71xx.ipk
 opkg install tree_1.7.0-1_ar71xx.ipk
@@ -61,6 +63,7 @@ chmod 777 bridgePrint.py
 chmod 777 config.conf
 chmod 777 checkInit.py
 chmod 777 factoryReset.sh
+chmod 777 checkInit.sh
 cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
 
@@ -72,6 +75,7 @@ chmod 777 publicIP.py
 chmod 777 service.py
 chmod 777 "$var1".hex
 cp factoryReset.sh /usr/bin/factoryReset
+cp checkInit.sh /usr/bin/checkInit
 
 
 echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
