@@ -36,7 +36,7 @@ try:
 	#sys.exit()
 except:
 	e = sys.exc_info()[0]
-print e
+	print e
 sys.exit()
 
 #"http://70.35.207.145/ubicacion_vallas_pruebas/wp-json/int_sens/accesos"

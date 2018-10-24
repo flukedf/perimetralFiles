@@ -78,6 +78,7 @@ chmod 777 service.py
 chmod 777 "$var1".hex
 cp factoryReset.sh /usr/bin/factoryReset
 cp checkInit.sh /usr/bin/checkInit
+cp postData.sh /usr/bin/postData
 
 
 echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root

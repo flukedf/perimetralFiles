@@ -751,7 +751,7 @@ void sentMail(){
 
 void postData(){
                  Process inDataSensor;
-                 inDataSensor.runShellCommand(F("sudo sh /root/postData.sh"));
+                 inDataSensor.runShellCommand(F("sudo sh postData.sh"));
                  Console.print(F("\n Post Data DB...\n"));
                  //delay(1000);
 }
