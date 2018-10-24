@@ -49,6 +49,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/at_3.1.13-1_ar71xx.ipk
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/tree_1.7.0-1_ar71xx.ipk
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkInit.sh
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.sh
 
 
 opkg install at_3.1.13-1_ar71xx.ipk
@@ -64,6 +65,7 @@ chmod 777 config.conf
 chmod 777 checkInit.py
 chmod 777 factoryReset.sh
 chmod 777 checkInit.sh
+chmod 777 postData.sh
 cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
 

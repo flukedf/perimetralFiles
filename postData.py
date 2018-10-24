@@ -1,5 +1,6 @@
 import sys
 import requests
+import os
 sys.path.insert(0, '/usr/lib/python2.7/bridge/')
 from bridgeclient import BridgeClient as bridgeclient
 import ConfigParser
@@ -11,7 +12,6 @@ value = bridgeclient()
 #value.put("D12","Test")
 
 #device = value.get('device')
-
 
 device = parser.get('device','codePDF')
 url = parser.get('post','url')
@@ -28,10 +28,15 @@ PH0 = value.get('PH0')
 PH1 = value.get('PH1')
 PH2 = value.get('PH2')
 
+os.system('date')
 
-
-r = requests.post(url, data={'device':(device),'A0':(A0),'A1':(A1),'A2':(A2),'A3':(A3),'A4':(A4),'A5':(A5),'A6':(A6),'A7':(A7),'PH0':(PH0),'PH1':(PH1),'PH2':(PH2)})
-print(r.status_code, r.reason)
+try:
+	r = requests.post(url, data={'device':(device),'A0':(A0),'A1':(A1),'A2':(A2),'A3':(A3),'A4':(A4),'A5':(A5),'A6':(A6),'A7':(A7),'PH0':(PH0),'PH1':(PH1),'PH2':(PH2)})	
+	print(r.status_code, r.reason)
+	#sys.exit()
+except:
+	e = sys.exc_info()[0]
+print e
 sys.exit()
 
 #"http://70.35.207.145/ubicacion_vallas_pruebas/wp-json/int_sens/accesos"
