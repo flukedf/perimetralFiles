@@ -22,10 +22,10 @@ try:
 	for x in range(2):
  		status = value.get('statusBridge')
 		status = int(status)
-		print("Valor Status",status)
+		#print("Valor Status",status)
 		carry = carry + status
 		sleep(7.5)
-		print ("Valor Carry",carry)	
+		#print ("Valor Carry",carry)	
 
 
 except:
@@ -41,9 +41,9 @@ else:
 		sleep(15)
 		status = value.get('statusBridge')
 		status = int(status)
-		print("Valor Status 2",status)
+		#print("Valor Status 2",status)
 		carry = carry + status
-		print ("Valor Carry 2",carry)	
+		#print ("Valor Carry 2",carry)	
 		if carry != 0:
 			print ("MCU iniciado correctamente")
 
