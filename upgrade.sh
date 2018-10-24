@@ -137,7 +137,7 @@ merge-sketch-with-bootloader.lua /root/"$var1".hex
 run-avrdude /root/"$var1".hex
 rm requests-2.9.1.tar.gz
 rm at_3.1.13-1_ar71xx.ipk
-rm  
+rm tree_1.7.0-1_ar71xx.ipk 
 rm /root/"$var1".hex
 echo
 #Avisar al usuario que se ha terminado de ejecutar el script 
