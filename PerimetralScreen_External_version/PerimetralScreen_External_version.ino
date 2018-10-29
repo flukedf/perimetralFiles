@@ -751,7 +751,7 @@ void sentMail(){
 
 void postData(){
                  Process inDataSensor;
-                 inDataSensor.runShellCommand(F("sudo sh postData.sh"));
+                 inDataSensor.runShellCommand(F("sudo python /root/postData.py >> post.log"));
                  Console.print(F("\n Post Data DB...\n"));
                  //delay(1000);
 }
