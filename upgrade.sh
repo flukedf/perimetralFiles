@@ -81,7 +81,7 @@ cp checkInit.sh /usr/bin/checkInit
 cp postData.sh /usr/bin/postData
 
 
-echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
+echo '3 * * * * "reset-mcu"'>>/etc/crontabs/root
 #echo '15 * * * * "python /root/checkBridge.py"'>>/etc/crontabs/root
 echo '*/5 * * * * "checkInit"'>>/etc/crontabs/root
 echo '* * 1 * * "> init.log"'>>/etc/crontabs/root
@@ -163,5 +163,3 @@ echo
 echo
 echo
 reboot
-
-

@@ -33,7 +33,7 @@ except:
 
 
 if carry != 0:
-	print ("MCU iniciado correctamente")
+	#print ("MCU iniciado correctamente")
 else:	
 	print("MCU se reiniciara nuevamente","MCU didn't start")
 	os.system('reset-mcu')
@@ -45,7 +45,7 @@ else:
 		carry = carry + status
 		#print ("Valor Carry 2",carry)	
 		if carry != 0:
-			print ("MCU iniciado correctamente")
+			#print ("MCU iniciado correctamente")
 
 	except:
 		print("No se incio MCU 2","Valor Status 2",status,"Reboot")
