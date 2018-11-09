@@ -125,9 +125,9 @@ uci set system.vendor.timezone=CST6CDT,M4.1.0,M10.5.0
 uci set system.@watchcat[0]=watchcat
 uci set system.@watchcat[0].pinghost=8.8.8.8
 uci set system.@watchcat[0].mode=ping
-uci set system.@watchcat[0].pingperiod=10m
+uci set system.@watchcat[0].pingperiod=15m
 uci set system.@watchcat[0].period=30m
-uci set system.@watchcat[0].forcedelay=240
+uci set system.@watchcat[0].forcedelay=600
 uci commit system
 luci-reload
 sudo /etc/init.d/atd start
