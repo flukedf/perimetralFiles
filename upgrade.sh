@@ -50,7 +50,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/tree_1.7.0-1_ar71xx.ipk
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkInit.sh
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.sh
-
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/unix.sh
 
 opkg install at_3.1.13-1_ar71xx.ipk
 opkg install tree_1.7.0-1_ar71xx.ipk
@@ -85,6 +85,7 @@ echo '3 * * * * "reset-mcu"'>>/etc/crontabs/root
 #echo '15 * * * * "python /root/checkBridge.py"'>>/etc/crontabs/root
 echo '*/5 * * * * "checkInit"'>>/etc/crontabs/root
 echo '* * 1 * * "> init.log"'>>/etc/crontabs/root
+echo '00 6 * * * "unix.sh"'>>/etc/crontabs/root
 #echo '00 12 * * * "reboot"'>>/etc/crontabs/root
 #echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 ###########################
