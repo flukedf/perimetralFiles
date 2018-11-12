@@ -28,9 +28,9 @@ opkg install python-bzip2
 opkg install sudo
 opkg remove temboo
 opkg install nano
-opkg install watchcat
-opkg install luci-app-watchcat
-/etc/uci-defaults/50-watchcat
+#opkg install watchcat
+#opkg install luci-app-watchcat
+#/etc/uci-defaults/50-watchcat
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/requests-2.9.1.tar.gz
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkBridge.py
@@ -124,12 +124,12 @@ uci set system.@system[0].zonename="America/Mexico City"
 uci set system.@system[0].timezone=CST6CDT,M4.1.0,M10.5.0
 uci set system.vendor.zonename="America/Mexico City"
 uci set system.vendor.timezone=CST6CDT,M4.1.0,M10.5.0
-uci set system.@watchcat[0]=watchcat
-uci set system.@watchcat[0].pinghost=8.8.8.8
-uci set system.@watchcat[0].mode=ping
-uci set system.@watchcat[0].pingperiod=15m
-uci set system.@watchcat[0].period=30m
-uci set system.@watchcat[0].forcedelay=600
+#uci set system.@watchcat[0]=watchcat
+#uci set system.@watchcat[0].pinghost=8.8.8.8
+#uci set system.@watchcat[0].mode=ping
+#uci set system.@watchcat[0].pingperiod=15m
+#uci set system.@watchcat[0].period=30m
+#uci set system.@watchcat[0].forcedelay=600
 uci commit system
 luci-reload
 sudo /etc/init.d/atd start
