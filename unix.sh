@@ -5,3 +5,5 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 chmod 777 unix.sh
 #reboot
 mv checkInit.py checkInit.pyy
+
+
