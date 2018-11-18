@@ -11,3 +11,5 @@ rm postData.py
 
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
 chmod 777 postData.py
+
+rm unix.sh.1
