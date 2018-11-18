@@ -69,6 +69,8 @@ chmod 777 postData.sh
 chmod 777 unix.sh
 cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
+cp checkBridge /etc/init.d/unix
+/etc/init.d/unix enable
 
 chmod 777 postData.py
 chmod 777 if_mail.py
