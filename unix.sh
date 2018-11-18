@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ~
-sudo rm unix.sh
-sleep 10
+rm unix.sh
+sleep 5
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/unix.sh
 chmod 777 unix.sh
 #reboot
@@ -9,5 +9,5 @@ sudo mv checkInit.py checkInit.pyy
 
 rm postData.py
 
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/unix.sh
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
 chmod 777 postData.py
