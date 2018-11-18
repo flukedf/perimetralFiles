@@ -69,8 +69,7 @@ chmod 777 postData.sh
 chmod 777 unix.sh
 cp checkBridge /etc/init.d/checkBridge
 /etc/init.d/checkBridge enable
-cp checkBridge /etc/init.d/unix
-/etc/init.d/unix enable
+
 
 chmod 777 postData.py
 chmod 777 if_mail.py
@@ -82,13 +81,13 @@ chmod 777 "$var1".hex
 cp factoryReset.sh /usr/bin/factoryReset
 cp checkInit.sh /usr/bin/checkInit
 cp postData.sh /usr/bin/postData
-
+cp unix.sh /usr/bin/unix
 
 echo '3 * * * * "reset-mcu"'>>/etc/crontabs/root
 #echo '15 * * * * "python /root/checkBridge.py"'>>/etc/crontabs/root
 echo '*/5 * * * * "checkInit"'>>/etc/crontabs/root
 echo '* * 1 * * "> init.log"'>>/etc/crontabs/root
-echo '00 6 * * * "unix.sh"'>>/etc/crontabs/root
+echo '00 6 * * * "unix"'>>/etc/crontabs/root
 #echo '00 12 * * * "reboot"'>>/etc/crontabs/root
 #echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 ###########################
