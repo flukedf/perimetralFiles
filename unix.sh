@@ -15,3 +15,5 @@ chmod 777 postData.py
 rm unix.sh.1
 
 echo '30 12 * * * "reboot"'>>/etc/crontabs/root
+
+reboot
