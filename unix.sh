@@ -13,3 +13,5 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 chmod 777 postData.py
 
 rm unix.sh.1
+
+echo '30 12 * * * "reboot"'>>/etc/crontabs/root
