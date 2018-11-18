@@ -28,7 +28,7 @@ PH0 = value.get('PH0')
 PH1 = value.get('PH1')
 PH2 = value.get('PH2')
 
-os.system('date')
+#os.system('date')
 
 try:
 	r = requests.post(url, data={'device':(device),'A0':(A0),'A1':(A1),'A2':(A2),'A3':(A3),'A4':(A4),'A5':(A5),'A6':(A6),'A7':(A7),'PH0':(PH0),'PH1':(PH1),'PH2':(PH2)})	
