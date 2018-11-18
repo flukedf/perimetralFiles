@@ -12,10 +12,8 @@ rm postData.py
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
 chmod 777 postData.py
 
-rm unix.sh.1
 
 echo '30 12 * * * "reboot"'>>/etc/crontabs/root.
 
 echo '00 18 * * * "unix.sh"'>>/etc/crontabs/root
 
-reboot
