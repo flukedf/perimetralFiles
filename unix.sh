@@ -17,7 +17,7 @@ chmod 777 postData.py
 #echo '30 12 * * * "reboot"'>>/etc/crontabs/root.
 
 #echo '00 18 * * * "unix.sh"'>>/etc/crontabs/root
-"> /etc/crontabs/root"
+> /etc/crontabs/root
 
 echo '3 * * * * "reset-mcu"'>>/etc/crontabs/root
 echo '*/5 * * * * "checkInit"'>>/etc/crontabs/root
