@@ -19,11 +19,11 @@ chmod 777 postData.py
 #echo '00 18 * * * "unix.sh"'>>/etc/crontabs/root
 > /etc/crontabs/root
 
-echo '3 * * * * "reset-mcu"'>>/etc/crontabs/root
+echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
 echo '*/5 * * * * "checkInit"'>>/etc/crontabs/root
 echo '* * 1 * * "> init.log"'>>/etc/crontabs/root
-echo '00 6 * * * "unix"'>>/etc/crontabs/root
-echo '00 22 * * * "unix"'>>/etc/crontabs/root
+echo '00 00 * * * "unix"'>>/etc/crontabs/root
+echo '00 12 * * * "unix"'>>/etc/crontabs/root
 
 /etc/init.d/cron start
 /etc/init.d/cron enable
