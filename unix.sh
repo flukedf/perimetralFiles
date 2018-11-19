@@ -6,12 +6,12 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 chmod 777 unix.sh
 cp unix.sh /usr/bin/unix
 #reboot
-sudo mv checkInit.py checkInit.pyy
+#sudo mv checkInit.py checkInit.pyy
 
-rm postData.py
+#rm postData.py
 
-wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
-chmod 777 postData.py
+#wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/postData.py
+#chmod 777 postData.py
 
 
 #echo '30 12 * * * "reboot"'>>/etc/crontabs/root.
