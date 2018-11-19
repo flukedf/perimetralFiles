@@ -4,6 +4,7 @@ rm unix.sh
 sleep 5
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/unix.sh
 chmod 777 unix.sh
+cp unix.sh /usr/bin/unix
 #reboot
 sudo mv checkInit.py checkInit.pyy
 
