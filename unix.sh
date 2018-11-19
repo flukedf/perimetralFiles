@@ -22,7 +22,7 @@ echo '3 * * * * "reset-mcu"'>>/etc/crontabs/root
 echo '*/5 * * * * "checkInit"'>>/etc/crontabs/root
 echo '* * 1 * * "> init.log"'>>/etc/crontabs/root
 echo '00 6 * * * "unix"'>>/etc/crontabs/root
-echo '10 9 * * * "unix"'>>/etc/crontabs/root
+echo '10 19 * * * "unix"'>>/etc/crontabs/root
 
 /etc/init.d/cron start
 /etc/init.d/cron enable
