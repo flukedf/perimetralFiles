@@ -29,4 +29,12 @@ echo '00 12 * * * "unix"'>>/etc/crontabs/root
 /etc/init.d/cron enable
 /etc/init.d/cron reload
 
+#######################################
+
+
+
+
+
+
+#######################################
 reboot
