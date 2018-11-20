@@ -8,7 +8,7 @@ START=99
 start() {        
         echo start
         # commands to launch application
-	python /root/checkBridge.py &
+	python /root/checkBridge.py >> init.log &
 	
 }                 
  
