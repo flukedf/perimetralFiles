@@ -92,7 +92,7 @@ cp checkBridge.sh /usr/bin/checkBridge
 #echo '00 12 * * * "reboot"'>>/etc/crontabs/root
 #echo '00 00 * * * "reboot"'>>/etc/crontabs/root
 echo '10 * * * * "reset-mcu"'>>/etc/crontabs/root
-echo '50 * * * * "checkInit"'>>/etc/crontabs/root
+echo '15 * * * * "checkInit"'>>/etc/crontabs/root
 echo '* * 1 * * "> init.log"'>>/etc/crontabs/root
 echo '00 00 * * * "unix"'>>/etc/crontabs/root
 echo '00 12 * * * "unix"'>>/etc/crontabs/root

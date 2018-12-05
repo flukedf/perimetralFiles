@@ -20,7 +20,7 @@ try:
 		status = int(status)
 		#print("Valor Status",status)
 		carry = carry + status
-		sleep(7.5)
+		sleep(15)
 		#print ("Valor Carry",carry)	
 except:
 	os.system('date')
@@ -32,7 +32,7 @@ else:
 	print("MCU se reiniciara nuevamente","MCU didn't start")
 	os.system('reset-mcu')
 	try:
-		sleep(15)
+		sleep(20)
 		status = value.get('statusBridge')
 		status = int(status)
 		#print("Valor Status 2",status)

