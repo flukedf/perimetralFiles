@@ -42,7 +42,7 @@ echo '00 12 * * * "unix"'>>/etc/crontabs/root
 
 #######################################
 
-mv service.py service.pyy
+mv -i service.py service.pyy
 sleep 5
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/service.py
 chmod 777 service.py
