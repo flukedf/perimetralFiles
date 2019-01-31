@@ -1,6 +1,6 @@
 #!/bin/ash
 cd ~
-mv unix.sh unix.shh
+mv -i unix.sh unix.shh
 sleep 5
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/unix.sh
 chmod 777 unix.sh
