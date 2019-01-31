@@ -5,6 +5,17 @@ sleep 5
 wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetralFiles/master/unix.sh
 chmod 777 unix.sh
 cp unix.sh /usr/bin/unix
+if [ -f /root/unix.sh ];
+then
+echo "delete unix.shh"
+rm unix.shh
+else
+echo "No, no existe"
+break
+fi
+
+
+
 #reboot
 #sudo mv checkInit.py checkInit.pyy
 
