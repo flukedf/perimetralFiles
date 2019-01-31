@@ -11,7 +11,6 @@ echo "delete unix.shh"
 rm unix.shh
 else
 echo "No, no existe"
-break
 fi
 
 
