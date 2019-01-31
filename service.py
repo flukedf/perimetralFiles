@@ -1,9 +1,6 @@
 #!/usr/bin/python
 import os
 import subprocess
-
-
-
 import requests
 import sys
 #import os
@@ -34,13 +31,16 @@ print url+pdfCode
 
 r = requests.get(url+pdfCode)
 
-print r.text
-if "1" in r.text:
+
+
+if "1" in r.text or "404" in r.text:
 	status = value.put('statusService',"1")
 	status = int(status)
 	print status
 	print"ON"
 	r = requests.post(url, data={'ID':(pdfCode),'resp':("1")})
+
+
 
 else:
 	status = value.put('statusService',"0")
@@ -49,11 +49,10 @@ else:
 	print"OFF"
 	r = requests.post(url, data={'ID':(pdfCode),'resp':("0")})
 
+	print r.text
 
 
 #print(r.status_code, r.reason)
-
-
 
 
 
