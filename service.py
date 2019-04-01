@@ -29,6 +29,8 @@ print pdfCode
 print url
 print url+pdfCode
 
+status = value.put('statusService',"1")
+'''
 r = requests.get(url+pdfCode)
 
 
@@ -51,7 +53,7 @@ else:
 
 	print r.text
 
-
+'''
 #print(r.status_code, r.reason)
 
 
