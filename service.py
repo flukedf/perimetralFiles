@@ -30,31 +30,39 @@ print url
 print url+pdfCode
 
 status = value.put('statusService',"1")
-'''
-r = requests.get(url+pdfCode)
+
+try:
+		r = requests.get(url+pdfCode)
 
 
 
-if "1" in r.text or "404" in r.text:
-	status = value.put('statusService',"1")
-	status = int(status)
-	print status
-	print"ON"
-	r = requests.post(url, data={'ID':(pdfCode),'resp':("1")})
+		if "1" in r.text or "404" in r.text:
+			status = value.put('statusService',"1")
+			status = int(status)
+			print status
+			print"ON"
+			r = requests.post(url, data={'ID':(pdfCode),'resp':("1")})
 
 
 
-else:
-	status = value.put('statusService',"0")
-	status = int(status)
-	print status
-	print"OFF"
-	r = requests.post(url, data={'ID':(pdfCode),'resp':("0")})
+		else:
+			status = value.put('statusService',"0")
+			status = int(status)
+			print status
+			print"OFF"
+			r = requests.post(url, data={'ID':(pdfCode),'resp':("0")})
 
-	print r.text
+			print r.text
+except:
+		status = value.put('statusService',"1")
 
-'''
+
 #print(r.status_code, r.reason)
+
+
+
+
+
 
 
 
