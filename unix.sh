@@ -40,7 +40,7 @@ echo '00 12 * * * "unix"'>>/etc/crontabs/root
 /etc/init.d/cron reload
 
 #######################################
-: '
+#: '
 
 mv -i service.py service.pyy
 sleep 5
@@ -48,7 +48,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/flukedf/perimetral
 chmod 777 service.py
 rm service.pyy
 
-'
+#'
 
 #######################################
 reboot
